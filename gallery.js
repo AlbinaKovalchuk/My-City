@@ -3,7 +3,7 @@
   https://ja.splidejs.com/guides/getting-started/
 */
 const modalButtons = document.querySelectorAll('.gallery-button');
-modalButtons.forEach(modalButton => {
+modalButtons.forEach((modalButton) => {
   modalButton.addEventListener('click', () => {
     sliderElm.dataset.showIndex = modalButton.dataset.index;
   });
@@ -17,7 +17,6 @@ const slider = new Splide(sliderElm, {
   speed: SLIDE_SPEED,
 }).mount();
 
-
 /*
   Micromodal
   https://micromodal.vercel.app/
@@ -25,11 +24,11 @@ const slider = new Splide(sliderElm, {
 MicroModal.init({
   onShow: () => {
     slider.options = {
-      speed: 0
+      speed: 0,
     };
     slider.go(Number(sliderElm.dataset.showIndex));
     slider.options = {
-      speed: SLIDE_SPEED
+      speed: SLIDE_SPEED,
     };
-  }
+  },
 });
